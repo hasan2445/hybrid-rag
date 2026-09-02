@@ -155,4 +155,4 @@ hybrid-rag/
 
 ## Author
 
-Tim Ponomarev — Applied ML Engineer, independent B2B contractor.
+Mohammad Hasan -AI/ML engineer
