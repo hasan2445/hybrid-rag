@@ -1,0 +1,14 @@
+data/corpus.jsonl
+data/queries.jsonl
+data/docs/
+outputs/
+__pycache__/
+*.pyc
+.env
+.venv/
+venv/
+.ipynb_checkpoints/
+*.egg-info/
+.qdrant/
+.idea/
+.vscode/

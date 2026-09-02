@@ -1,0 +1,25 @@
+# Default config for hybrid-rag pipeline
+# Tuned from grid search on LegalBench dev set
+
+retrieval:
+  embed_model: "intfloat/e5-large-v2"
+  qdrant_url: "http://localhost:6333"
+  chunk_size: 512          # tokens; 256 loses context, 1024 only wins for long paragraphs
+  overlap_ratio: 0.2       # 20% overlap, handles boundary queries
+  bm25_top_k: 50
+  dense_top_k: 50
+  rrf_k: 60                # standard RRF smoothing
+
+rerank:
+  model: "cross-encoder/ms-marco-MiniLM-L-6-v2"
+  top_k: 10
+  batch_size: 32
+
+generation:
+  model: "gpt-4o-mini"
+  temperature: 0.2
+  max_tokens: 800
+
+eval:
+  judge_model: "gpt-4o-mini"
+  metrics: ["ndcg@10", "mrr@10", "recall@50", "faithfulness", "relevance", "coverage"]
